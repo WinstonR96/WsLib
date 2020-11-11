@@ -1,0 +1,1921 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsoap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="urn:sap-com:document:sap:rfc:functions" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" targetNamespace="urn:sap-com:document:sap:rfc:functions" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>
+    <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
+  </wsdl:documentation>
+  <wsp:UsingPolicy wsdl:required="true" />
+  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_bin">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_bin_soap12">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedMimeSerialization xmlns:saptrnbnd="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+      <wsp:All>
+        <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
+        <saptrnbnd:OptimizedXMLTransfer uri="http://xml.sap.com/2006/11/esi/esp/binxml" xmlns:saptrnbnd="http://www.sap.com/webas/710/soap/features/transportbinding/" wsp:Optional="true" />
+        <wsaw:UsingAddressing xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" wsp:Optional="true" />
+        <wsp:All xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+          <sp:TransportBinding xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702" xmlns:sapsp="http://www.sap.com/webas/630/soap/features/security/policy" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:wst="http://docs.oasis-open.org/ws-sx/ws-trust/200512" xmlns:wsu="http://schemas.xmlsoap.org/ws/2002/07/utility" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex">
+            <wsp:Policy>
+              <sp:TransportToken>
+                <wsp:Policy>
+                  <sp:HttpsToken>
+                    <wsp:Policy>
+                      <sp:HttpBasicAuthentication />
+                    </wsp:Policy>
+                  </sp:HttpsToken>
+                </wsp:Policy>
+              </sp:TransportToken>
+              <sp:AlgorithmSuite>
+                <wsp:Policy>
+                  <sp:Basic128Rsa15 />
+                </wsp:Policy>
+              </sp:AlgorithmSuite>
+              <sp:Layout>
+                <wsp:Policy>
+                  <sp:Strict />
+                </wsp:Policy>
+              </sp:Layout>
+            </wsp:Policy>
+          </sp:TransportBinding>
+        </wsp:All>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="IF__ZWS_ONBASE">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sapsession:Session xmlns:sapsession="http://www.sap.com/webas/630/soap/features/session/">
+          <sapsession:enableSession>false</sapsession:enableSession>
+        </sapsession:Session>
+        <sapcentraladmin:CentralAdministration xmlns:sapcentraladmin="http://www.sap.com/webas/700/soap/features/CentralAdministration/" wsp:Optional="true">
+          <sapcentraladmin:BusinessApplicationID>4F4B1294B6B611E0E1008000BED8C52A</sapcentraladmin:BusinessApplicationID>
+        </sapcentraladmin:CentralAdministration>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_CLIENTE">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_CLIENTE_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_COMPROBANTESCONTABLE_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_CONSDOCPROV_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_EGRESO">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_FACEXPOCLI_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_FACTEXPCLIENTES_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_FACTURACLIENTES_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_FACTURAPROVEEDOR_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_FACTURASPAZKO_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_NOMBREBANCO_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_ORDENESCOMPRA">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_ORDENESCOMPRA_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_PEDIDOSPAZKO_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_PROVEEDOR">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_PROVEEDOR_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_RECIBOCAJA_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_REMESAS_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema attributeFormDefault="qualified" targetNamespace="urn:sap-com:document:sap:rfc:functions">
+      <xsd:simpleType name="RfcException.Message.Number">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="3" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char12">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="12" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char16">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="16" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char20">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="20" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char30">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="30" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char35">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="35" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char6">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="6" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char70">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="70" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char80">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="80" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="char90">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="90" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="curr15.2">
+        <xsd:restriction base="xsd:decimal">
+          <xsd:totalDigits value="15" />
+          <xsd:fractionDigits value="2" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="date10">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="10" />
+          <xsd:pattern value="\d\d\d\d-\d\d-\d\d" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="numeric4">
+        <xsd:restriction base="xsd:string">
+          <xsd:maxLength value="4" />
+          <xsd:pattern value="\d*" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="ZTDCONSDOCPROV_1">
+        <xsd:sequence>
+          <xsd:element name="BELNR" type="tns:char10" />
+          <xsd:element name="LIFNR" type="tns:char10" />
+          <xsd:element name="NAME1" type="tns:char35" />
+          <xsd:element name="STCD1" type="tns:char16" />
+          <xsd:element name="XBLNR" type="tns:char16" />
+          <xsd:element name="GJAHR" type="tns:numeric4" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZONBASE_EGRESOS_EGRESOS">
+        <xsd:sequence>
+          <xsd:element name="VBLNR" type="tns:char10" />
+          <xsd:element name="LAUFD" type="tns:date10" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZONBASE_EGRESOS_FACTURAS">
+        <xsd:sequence>
+          <xsd:element name="XBLNR" type="tns:char16" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZONBASE_EGRESOS_LOTE">
+        <xsd:sequence>
+          <xsd:element name="LAUFI" type="tns:char6" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZONBASE_EGRESOS_PROVEEDOR">
+        <xsd:sequence>
+          <xsd:element name="LIFNR" type="tns:char10" />
+          <xsd:element name="STCD1" type="tns:char16" />
+          <xsd:element name="NAME" type="tns:char80" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTDCONSULTACLIENTE_1">
+        <xsd:sequence>
+          <xsd:element name="VBELN" type="tns:char10" />
+          <xsd:element name="STCD1" type="tns:char16" />
+          <xsd:element name="NAME1" type="tns:char35" />
+          <xsd:element name="KUNNR" type="tns:char10" />
+          <xsd:element name="AUBEL" type="tns:char10" />
+          <xsd:element name="FECHA" type="tns:char20" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTDCONSULTAPROVEEDOR_1">
+        <xsd:sequence>
+          <xsd:element name="BELNR" type="tns:char10" />
+          <xsd:element name="STCD1" type="tns:char16" />
+          <xsd:element name="NAME1" type="tns:char80" />
+          <xsd:element name="LIFNR" type="tns:char10" />
+          <xsd:element name="XBLNR" type="tns:char16" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTDCONSULFACTU_1">
+        <xsd:sequence>
+          <xsd:element name="VBELN" type="tns:char10" />
+          <xsd:element name="NAME1" type="tns:char35" />
+          <xsd:element name="KUNNR" type="tns:char10" />
+          <xsd:element name="AUBEL" type="tns:char10" />
+          <xsd:element name="TDATE" type="tns:char20" />
+          <xsd:element name="BSTNK" type="tns:char20" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZTDCONSULPEDIDO_1">
+        <xsd:sequence>
+          <xsd:element name="BSTNK" type="tns:char20" />
+          <xsd:element name="KUNNR" type="tns:char10" />
+          <xsd:element name="NAME1" type="tns:char35" />
+          <xsd:element name="TDATE" type="tns:char20" />
+          <xsd:element name="ERNAM" type="tns:char12" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="RfcException.Message">
+        <xsd:sequence>
+          <xsd:element name="ID" type="xsd:string" />
+          <xsd:element name="Number" type="tns:RfcException.Message.Number" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_CLIENTE.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_CLIENTE.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_CLIENTE_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_CLIENTE_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_COMPROBANTESCONTABLE_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_COMPROBANTESCONTABLE_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_CONSDOCPROV_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_CONSDOCPROV_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_EGRESO.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_EGRESO.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_FACEXPOCLI_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_FACEXPOCLI_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_FACTEXPCLIENTES_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_FACTEXPCLIENTES_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_FACTURACLIENTES_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_FACTURACLIENTES_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_FACTURAPROVEEDOR_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_FACTURAPROVEEDOR_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_FACTURASPAZKO_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_FACTURASPAZKO_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_NOMBREBANCO_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_NOMBREBANCO_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_ORDENESCOMPRA.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_ORDENESCOMPRA.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_ORDENESCOMPRA_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_ORDENESCOMPRA_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_PEDIDOSPAZKO_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_PEDIDOSPAZKO_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_PROVEEDOR.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_PROVEEDOR.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_PROVEEDOR_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_PROVEEDOR_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_RECIBOCAJA_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_RECIBOCAJA_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ZBAPI_REMESAS_1.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_REMESAS_1.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZTDCONSDOCPROV_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZTDCONSDOCPROV_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZONBASE_EGRESOS_EGRESOS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZONBASE_EGRESOS_EGRESOS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZONBASE_EGRESOS_FACTURAS">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZONBASE_EGRESOS_FACTURAS" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZONBASE_EGRESOS_LOTE">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZONBASE_EGRESOS_LOTE" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZONBASE_EGRESOS_PROVEEDOR">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZONBASE_EGRESOS_PROVEEDOR" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZTDCONSULTACLIENTE_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZTDCONSULTACLIENTE_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZTDCONSULTAPROVEEDOR_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZTDCONSULTAPROVEEDOR_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZTDCONSULFACTU_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZTDCONSULFACTU_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="TABLE_OF_ZTDCONSULPEDIDO_1">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="item" type="tns:ZTDCONSULPEDIDO_1" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="ZBAPI_CLIENTE.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_CLIENTE_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_COMPROBANTESCONTABLE_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_CONSDOCPROV_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_EGRESO.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_FACEXPOCLI_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_FACTEXPCLIENTES_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_FACTURACLIENTES_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_FACTURAPROVEEDOR_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_FACTURASPAZKO_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_NOMBREBANCO_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_ORDENESCOMPRA.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_ORDENESCOMPRA_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_PEDIDOSPAZKO_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_PROVEEDOR.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_PROVEEDOR_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_RECIBOCAJA_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_REMESAS_1.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:element name="ZBAPI_CLIENTE.Exception" type="tns:ZBAPI_CLIENTE.RfcException" />
+      <xsd:element name="ZBAPI_CLIENTE_1.Exception" type="tns:ZBAPI_CLIENTE_1.RfcException" />
+      <xsd:element name="ZBAPI_COMPROBANTESCONTABLE_1.Exception" type="tns:ZBAPI_COMPROBANTESCONTABLE_1.RfcException" />
+      <xsd:element name="ZBAPI_CONSDOCPROV_1.Exception" type="tns:ZBAPI_CONSDOCPROV_1.RfcException" />
+      <xsd:element name="ZBAPI_EGRESO.Exception" type="tns:ZBAPI_EGRESO.RfcException" />
+      <xsd:element name="ZBAPI_FACEXPOCLI_1.Exception" type="tns:ZBAPI_FACEXPOCLI_1.RfcException" />
+      <xsd:element name="ZBAPI_FACTEXPCLIENTES_1.Exception" type="tns:ZBAPI_FACTEXPCLIENTES_1.RfcException" />
+      <xsd:element name="ZBAPI_FACTURACLIENTES_1.Exception" type="tns:ZBAPI_FACTURACLIENTES_1.RfcException" />
+      <xsd:element name="ZBAPI_FACTURAPROVEEDOR_1.Exception" type="tns:ZBAPI_FACTURAPROVEEDOR_1.RfcException" />
+      <xsd:element name="ZBAPI_FACTURASPAZKO_1.Exception" type="tns:ZBAPI_FACTURASPAZKO_1.RfcException" />
+      <xsd:element name="ZBAPI_NOMBREBANCO_1.Exception" type="tns:ZBAPI_NOMBREBANCO_1.RfcException" />
+      <xsd:element name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" type="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1.RfcException" />
+      <xsd:element name="ZBAPI_ORDENESCOMPRA.Exception" type="tns:ZBAPI_ORDENESCOMPRA.RfcException" />
+      <xsd:element name="ZBAPI_ORDENESCOMPRA_1.Exception" type="tns:ZBAPI_ORDENESCOMPRA_1.RfcException" />
+      <xsd:element name="ZBAPI_PEDIDOSPAZKO_1.Exception" type="tns:ZBAPI_PEDIDOSPAZKO_1.RfcException" />
+      <xsd:element name="ZBAPI_PROVEEDOR.Exception" type="tns:ZBAPI_PROVEEDOR.RfcException" />
+      <xsd:element name="ZBAPI_PROVEEDOR_1.Exception" type="tns:ZBAPI_PROVEEDOR_1.RfcException" />
+      <xsd:element name="ZBAPI_RECIBOCAJA_1.Exception" type="tns:ZBAPI_RECIBOCAJA_1.RfcException" />
+      <xsd:element name="ZBAPI_REMESAS_1.Exception" type="tns:ZBAPI_REMESAS_1.RfcException" />
+      <xsd:element name="ZBAPI_CLIENTE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BUKRS" type="tns:char4" />
+            <xsd:element name="V_STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_CLIENTEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="NAME" type="tns:char70" />
+            <xsd:element name="TEXT30" type="tns:char30" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_CLIENTE_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_CLIENTE_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="KUNNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="NAME2" type="tns:char35" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_COMPROBANTESCONTABLE_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BELNR" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_COMPROBANTESCONTABLE_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BLDAT" type="tns:date10" />
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_CONSDOCPROV_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSDOCPROV_1" />
+            <xsd:element name="V_BELNR" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_CONSDOCPROV_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSDOCPROV_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_EGRESO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_EGRESOS" type="tns:TABLE_OF_ZONBASE_EGRESOS_EGRESOS" />
+            <xsd:element name="IT_FACTURAS" type="tns:TABLE_OF_ZONBASE_EGRESOS_FACTURAS" />
+            <xsd:element name="IT_LOTE" type="tns:TABLE_OF_ZONBASE_EGRESOS_LOTE" />
+            <xsd:element name="IT_PROVEEDOR" type="tns:TABLE_OF_ZONBASE_EGRESOS_PROVEEDOR" />
+            <xsd:element name="V_BUKRS" type="tns:char4" />
+            <xsd:element name="V_VBLNR" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_EGRESOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_EGRESOS" type="tns:TABLE_OF_ZONBASE_EGRESOS_EGRESOS" />
+            <xsd:element name="IT_FACTURAS" type="tns:TABLE_OF_ZONBASE_EGRESOS_FACTURAS" />
+            <xsd:element name="IT_LOTE" type="tns:TABLE_OF_ZONBASE_EGRESOS_LOTE" />
+            <xsd:element name="IT_PROVEEDOR" type="tns:TABLE_OF_ZONBASE_EGRESOS_PROVEEDOR" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACEXPOCLI_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACEXPOCLI_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="KUNRG" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+            <xsd:element name="VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTEXPCLIENTES_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTEXPCLIENTES_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="AUBEL" type="tns:char10" />
+            <xsd:element name="KUNAG" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="TDATE" type="tns:char20" />
+            <xsd:element name="VBEL2" type="tns:char10" />
+            <xsd:element name="VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURACLIENTES_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULTACLIENTE_1" />
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURACLIENTES_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULTACLIENTE_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURAPROVEEDOR_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULTAPROVEEDOR_1" />
+            <xsd:element name="V_BELNR" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURAPROVEEDOR_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULTAPROVEEDOR_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURASPAZKO_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULFACTU_1" />
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_FACTURASPAZKO_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULFACTU_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_NOMBREBANCO_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_NOMBREBANCO_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="KUNRG" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+            <xsd:element name="VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_ORDENESCOMPRA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BUKRS" type="tns:char4" />
+            <xsd:element name="V_EBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_ORDENESCOMPRAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BANFN" type="tns:char20" />
+            <xsd:element name="EBELN" type="tns:char10" />
+            <xsd:element name="FECHA" type="tns:char10" />
+            <xsd:element name="KONNR" type="tns:char20" />
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME" type="tns:char35" />
+            <xsd:element name="PEP" type="tns:char16" />
+            <xsd:element name="RLWRT" type="tns:curr15.2" />
+            <xsd:element name="STCD1" type="tns:char16" />
+            <xsd:element name="USUARIO" type="tns:char80" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_ORDENESCOMPRA_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_EBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_ORDENESCOMPRA_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EBELN" type="tns:char10" />
+            <xsd:element name="FECHA" type="tns:char10" />
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="RLWRT" type="tns:curr15.2" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PEDIDOSPAZKO_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULPEDIDO_1" />
+            <xsd:element name="V_BSTNK" type="tns:char20" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PEDIDOSPAZKO_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="IT_SALIDA" type="tns:TABLE_OF_ZTDCONSULPEDIDO_1" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PROVEEDOR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BUKRS" type="tns:char4" />
+            <xsd:element name="V_STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PROVEEDORResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char90" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PROVEEDOR_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_PROVEEDOR_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="LIFNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char90" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_RECIBOCAJA_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BELNR" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_RECIBOCAJA_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BELNR" type="tns:char10" />
+            <xsd:element name="KUNNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_REMESAS_1">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_VBELN" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_REMESAS_1Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="EXTI2" type="tns:char20" />
+            <xsd:element name="FECHA" type="tns:char20" />
+            <xsd:element name="KUNNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+            <xsd:element name="TPBEZ" type="tns:char20" />
+            <xsd:element name="VBELN" type="tns:char10" />
+            <xsd:element name="VGBEL" type="tns:char10" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ZBAPI_CLIENTE">
+    <wsdl:part name="parameters" element="tns:ZBAPI_CLIENTE" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CLIENTEResponse">
+    <wsdl:part name="parameter" element="tns:ZBAPI_CLIENTEResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CLIENTE.Exception">
+    <wsdl:part name="ZBAPI_CLIENTE.Exception" element="tns:ZBAPI_CLIENTE.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CLIENTE_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_CLIENTE_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CLIENTE_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_CLIENTE_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CLIENTE_1.Exception">
+    <wsdl:part name="ZBAPI_CLIENTE_1.Exception" element="tns:ZBAPI_CLIENTE_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_COMPROBANTESCONTABLE_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_COMPROBANTESCONTABLE_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_COMPROBANTESCONTABLE_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_COMPROBANTESCONTABLE_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_COMPROBANTESCONTABLE_1.Exception">
+    <wsdl:part name="ZBAPI_COMPROBANTESCONTABLE_1.Exception" element="tns:ZBAPI_COMPROBANTESCONTABLE_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CONSDOCPROV_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_CONSDOCPROV_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CONSDOCPROV_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_CONSDOCPROV_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_CONSDOCPROV_1.Exception">
+    <wsdl:part name="ZBAPI_CONSDOCPROV_1.Exception" element="tns:ZBAPI_CONSDOCPROV_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_EGRESO">
+    <wsdl:part name="parameters" element="tns:ZBAPI_EGRESO" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_EGRESOResponse">
+    <wsdl:part name="parameter" element="tns:ZBAPI_EGRESOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_EGRESO.Exception">
+    <wsdl:part name="ZBAPI_EGRESO.Exception" element="tns:ZBAPI_EGRESO.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACEXPOCLI_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_FACEXPOCLI_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACEXPOCLI_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_FACEXPOCLI_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACEXPOCLI_1.Exception">
+    <wsdl:part name="ZBAPI_FACEXPOCLI_1.Exception" element="tns:ZBAPI_FACEXPOCLI_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTEXPCLIENTES_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_FACTEXPCLIENTES_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTEXPCLIENTES_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_FACTEXPCLIENTES_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTEXPCLIENTES_1.Exception">
+    <wsdl:part name="ZBAPI_FACTEXPCLIENTES_1.Exception" element="tns:ZBAPI_FACTEXPCLIENTES_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURACLIENTES_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_FACTURACLIENTES_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURACLIENTES_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_FACTURACLIENTES_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURACLIENTES_1.Exception">
+    <wsdl:part name="ZBAPI_FACTURACLIENTES_1.Exception" element="tns:ZBAPI_FACTURACLIENTES_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURAPROVEEDOR_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_FACTURAPROVEEDOR_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURAPROVEEDOR_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_FACTURAPROVEEDOR_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURAPROVEEDOR_1.Exception">
+    <wsdl:part name="ZBAPI_FACTURAPROVEEDOR_1.Exception" element="tns:ZBAPI_FACTURAPROVEEDOR_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURASPAZKO_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_FACTURASPAZKO_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURASPAZKO_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_FACTURASPAZKO_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_FACTURASPAZKO_1.Exception">
+    <wsdl:part name="ZBAPI_FACTURASPAZKO_1.Exception" element="tns:ZBAPI_FACTURASPAZKO_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOMBREBANCO_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_NOMBREBANCO_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOMBREBANCO_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_NOMBREBANCO_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOMBREBANCO_1.Exception">
+    <wsdl:part name="ZBAPI_NOMBREBANCO_1.Exception" element="tns:ZBAPI_NOMBREBANCO_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception">
+    <wsdl:part name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" element="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRA">
+    <wsdl:part name="parameters" element="tns:ZBAPI_ORDENESCOMPRA" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRAResponse">
+    <wsdl:part name="parameter" element="tns:ZBAPI_ORDENESCOMPRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRA.Exception">
+    <wsdl:part name="ZBAPI_ORDENESCOMPRA.Exception" element="tns:ZBAPI_ORDENESCOMPRA.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRA_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_ORDENESCOMPRA_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRA_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_ORDENESCOMPRA_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_ORDENESCOMPRA_1.Exception">
+    <wsdl:part name="ZBAPI_ORDENESCOMPRA_1.Exception" element="tns:ZBAPI_ORDENESCOMPRA_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PEDIDOSPAZKO_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_PEDIDOSPAZKO_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PEDIDOSPAZKO_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_PEDIDOSPAZKO_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PEDIDOSPAZKO_1.Exception">
+    <wsdl:part name="ZBAPI_PEDIDOSPAZKO_1.Exception" element="tns:ZBAPI_PEDIDOSPAZKO_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDOR">
+    <wsdl:part name="parameters" element="tns:ZBAPI_PROVEEDOR" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDORResponse">
+    <wsdl:part name="parameter" element="tns:ZBAPI_PROVEEDORResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDOR.Exception">
+    <wsdl:part name="ZBAPI_PROVEEDOR.Exception" element="tns:ZBAPI_PROVEEDOR.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDOR_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_PROVEEDOR_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDOR_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_PROVEEDOR_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_PROVEEDOR_1.Exception">
+    <wsdl:part name="ZBAPI_PROVEEDOR_1.Exception" element="tns:ZBAPI_PROVEEDOR_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJA_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_RECIBOCAJA_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJA_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_RECIBOCAJA_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJA_1.Exception">
+    <wsdl:part name="ZBAPI_RECIBOCAJA_1.Exception" element="tns:ZBAPI_RECIBOCAJA_1.Exception" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_REMESAS_1">
+    <wsdl:part name="parameters" element="tns:ZBAPI_REMESAS_1" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_REMESAS_1Response">
+    <wsdl:part name="parameter" element="tns:ZBAPI_REMESAS_1Response" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_REMESAS_1.Exception">
+    <wsdl:part name="ZBAPI_REMESAS_1.Exception" element="tns:ZBAPI_REMESAS_1.Exception" />
+  </wsdl:message>
+  <wsdl:portType name="ZWS_ONBASE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#IF__ZWS_ONBASE" />
+    </wsp:Policy>
+    <wsdl:operation name="ZBAPI_CLIENTE">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_CLIENTE" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_CLIENTE" />
+      <wsdl:output message="tns:ZBAPI_CLIENTEResponse" />
+      <wsdl:fault name="ZBAPI_CLIENTE.Exception" message="tns:ZBAPI_CLIENTE.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CLIENTE_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_CLIENTE_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_CLIENTE_1" />
+      <wsdl:output message="tns:ZBAPI_CLIENTE_1Response" />
+      <wsdl:fault name="ZBAPI_CLIENTE_1.Exception" message="tns:ZBAPI_CLIENTE_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_COMPROBANTESCONTABLE_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_COMPROBANTESCONTABLE_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_COMPROBANTESCONTABLE_1" />
+      <wsdl:output message="tns:ZBAPI_COMPROBANTESCONTABLE_1Response" />
+      <wsdl:fault name="ZBAPI_COMPROBANTESCONTABLE_1.Exception" message="tns:ZBAPI_COMPROBANTESCONTABLE_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CONSDOCPROV_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_CONSDOCPROV_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_CONSDOCPROV_1" />
+      <wsdl:output message="tns:ZBAPI_CONSDOCPROV_1Response" />
+      <wsdl:fault name="ZBAPI_CONSDOCPROV_1.Exception" message="tns:ZBAPI_CONSDOCPROV_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_EGRESO">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_EGRESO" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_EGRESO" />
+      <wsdl:output message="tns:ZBAPI_EGRESOResponse" />
+      <wsdl:fault name="ZBAPI_EGRESO.Exception" message="tns:ZBAPI_EGRESO.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACEXPOCLI_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_FACEXPOCLI_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_FACEXPOCLI_1" />
+      <wsdl:output message="tns:ZBAPI_FACEXPOCLI_1Response" />
+      <wsdl:fault name="ZBAPI_FACEXPOCLI_1.Exception" message="tns:ZBAPI_FACEXPOCLI_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTEXPCLIENTES_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_FACTEXPCLIENTES_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_FACTEXPCLIENTES_1" />
+      <wsdl:output message="tns:ZBAPI_FACTEXPCLIENTES_1Response" />
+      <wsdl:fault name="ZBAPI_FACTEXPCLIENTES_1.Exception" message="tns:ZBAPI_FACTEXPCLIENTES_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURACLIENTES_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_FACTURACLIENTES_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_FACTURACLIENTES_1" />
+      <wsdl:output message="tns:ZBAPI_FACTURACLIENTES_1Response" />
+      <wsdl:fault name="ZBAPI_FACTURACLIENTES_1.Exception" message="tns:ZBAPI_FACTURACLIENTES_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURAPROVEEDOR_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_FACTURAPROVEEDOR_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_FACTURAPROVEEDOR_1" />
+      <wsdl:output message="tns:ZBAPI_FACTURAPROVEEDOR_1Response" />
+      <wsdl:fault name="ZBAPI_FACTURAPROVEEDOR_1.Exception" message="tns:ZBAPI_FACTURAPROVEEDOR_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURASPAZKO_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_FACTURASPAZKO_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_FACTURASPAZKO_1" />
+      <wsdl:output message="tns:ZBAPI_FACTURASPAZKO_1Response" />
+      <wsdl:fault name="ZBAPI_FACTURASPAZKO_1.Exception" message="tns:ZBAPI_FACTURASPAZKO_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOMBREBANCO_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_NOMBREBANCO_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_NOMBREBANCO_1" />
+      <wsdl:output message="tns:ZBAPI_NOMBREBANCO_1Response" />
+      <wsdl:fault name="ZBAPI_NOMBREBANCO_1.Exception" message="tns:ZBAPI_NOMBREBANCO_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_NOTAS_CREDITOS_CLIENTE_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1" />
+      <wsdl:output message="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1Response" />
+      <wsdl:fault name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" message="tns:ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_ORDENESCOMPRA" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_ORDENESCOMPRA" />
+      <wsdl:output message="tns:ZBAPI_ORDENESCOMPRAResponse" />
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA.Exception" message="tns:ZBAPI_ORDENESCOMPRA.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_ORDENESCOMPRA_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_ORDENESCOMPRA_1" />
+      <wsdl:output message="tns:ZBAPI_ORDENESCOMPRA_1Response" />
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA_1.Exception" message="tns:ZBAPI_ORDENESCOMPRA_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PEDIDOSPAZKO_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_PEDIDOSPAZKO_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_PEDIDOSPAZKO_1" />
+      <wsdl:output message="tns:ZBAPI_PEDIDOSPAZKO_1Response" />
+      <wsdl:fault name="ZBAPI_PEDIDOSPAZKO_1.Exception" message="tns:ZBAPI_PEDIDOSPAZKO_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_PROVEEDOR" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_PROVEEDOR" />
+      <wsdl:output message="tns:ZBAPI_PROVEEDORResponse" />
+      <wsdl:fault name="ZBAPI_PROVEEDOR.Exception" message="tns:ZBAPI_PROVEEDOR.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_PROVEEDOR_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_PROVEEDOR_1" />
+      <wsdl:output message="tns:ZBAPI_PROVEEDOR_1Response" />
+      <wsdl:fault name="ZBAPI_PROVEEDOR_1.Exception" message="tns:ZBAPI_PROVEEDOR_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_RECIBOCAJA_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_RECIBOCAJA_1" />
+      <wsdl:output message="tns:ZBAPI_RECIBOCAJA_1Response" />
+      <wsdl:fault name="ZBAPI_RECIBOCAJA_1.Exception" message="tns:ZBAPI_RECIBOCAJA_1.Exception" />
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_REMESAS_1">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_REMESAS_1" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_REMESAS_1" />
+      <wsdl:output message="tns:ZBAPI_REMESAS_1Response" />
+      <wsdl:fault name="ZBAPI_REMESAS_1.Exception" message="tns:ZBAPI_REMESAS_1.Exception" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ZGF_ONBASE_bin" type="tns:ZWS_ONBASE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_bin" />
+    </wsp:Policy>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZBAPI_CLIENTE">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CLIENTERequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CLIENTE.Exception">
+        <soap:fault use="literal" name="ZBAPI_CLIENTE.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CLIENTE_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CLIENTE_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CLIENTE_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_CLIENTE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_COMPROBANTESCONTABLE_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_COMPROBANTESCONTABLE_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_COMPROBANTESCONTABLE_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_COMPROBANTESCONTABLE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CONSDOCPROV_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CONSDOCPROV_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CONSDOCPROV_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_CONSDOCPROV_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_EGRESO">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_EGRESORequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_EGRESO.Exception">
+        <soap:fault use="literal" name="ZBAPI_EGRESO.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACEXPOCLI_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACEXPOCLI_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACEXPOCLI_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_FACEXPOCLI_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTEXPCLIENTES_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTEXPCLIENTES_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTEXPCLIENTES_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_FACTEXPCLIENTES_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURACLIENTES_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURACLIENTES_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURACLIENTES_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_FACTURACLIENTES_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURAPROVEEDOR_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURAPROVEEDOR_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURAPROVEEDOR_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_FACTURAPROVEEDOR_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURASPAZKO_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURASPAZKO_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURASPAZKO_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_FACTURASPAZKO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOMBREBANCO_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_NOMBREBANCO_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_NOMBREBANCO_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_NOMBREBANCO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_NOTAS_CREDITOS_CLIENTE_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_ORDENESCOMPRARequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA.Exception">
+        <soap:fault use="literal" name="ZBAPI_ORDENESCOMPRA.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_ORDENESCOMPRA_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_ORDENESCOMPRA_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PEDIDOSPAZKO_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PEDIDOSPAZKO_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PEDIDOSPAZKO_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_PEDIDOSPAZKO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PROVEEDORRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PROVEEDOR.Exception">
+        <soap:fault use="literal" name="ZBAPI_PROVEEDOR.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PROVEEDOR_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PROVEEDOR_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_PROVEEDOR_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJA_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_RECIBOCAJA_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_RECIBOCAJA_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_REMESAS_1">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_REMESAS_1Request" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_REMESAS_1.Exception">
+        <soap:fault use="literal" name="ZBAPI_REMESAS_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ZGF_ONBASE_bin_soap12" type="tns:ZWS_ONBASE">
+    <wsp:Policy>
+      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_bin_soap12" />
+    </wsp:Policy>
+    <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ZBAPI_CLIENTE">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CLIENTERequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CLIENTE.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_CLIENTE.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CLIENTE_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CLIENTE_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CLIENTE_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_CLIENTE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_COMPROBANTESCONTABLE_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_COMPROBANTESCONTABLE_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_COMPROBANTESCONTABLE_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_COMPROBANTESCONTABLE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_CONSDOCPROV_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_CONSDOCPROV_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_CONSDOCPROV_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_CONSDOCPROV_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_EGRESO">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_EGRESORequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_EGRESO.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_EGRESO.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACEXPOCLI_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACEXPOCLI_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACEXPOCLI_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_FACEXPOCLI_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTEXPCLIENTES_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTEXPCLIENTES_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTEXPCLIENTES_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_FACTEXPCLIENTES_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURACLIENTES_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURACLIENTES_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURACLIENTES_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_FACTURACLIENTES_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURAPROVEEDOR_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURAPROVEEDOR_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURAPROVEEDOR_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_FACTURAPROVEEDOR_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_FACTURASPAZKO_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_FACTURASPAZKO_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_FACTURASPAZKO_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_FACTURASPAZKO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOMBREBANCO_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_NOMBREBANCO_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_NOMBREBANCO_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_NOMBREBANCO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_NOTAS_CREDITOS_CLIENTE_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_NOTAS_CREDITOS_CLIENTE_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_ORDENESCOMPRARequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_ORDENESCOMPRA.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_ORDENESCOMPRA_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_ORDENESCOMPRA_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_ORDENESCOMPRA_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_ORDENESCOMPRA_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PEDIDOSPAZKO_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PEDIDOSPAZKO_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PEDIDOSPAZKO_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_PEDIDOSPAZKO_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PROVEEDORRequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PROVEEDOR.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_PROVEEDOR.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_PROVEEDOR_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_PROVEEDOR_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_PROVEEDOR_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_PROVEEDOR_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJA_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_RECIBOCAJA_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_RECIBOCAJA_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ZBAPI_REMESAS_1">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_REMESAS_1Request" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_REMESAS_1.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_REMESAS_1.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ZWS_ONBASE">
+    <wsdl:port name="ZGF_ONBASE_bin" binding="tns:ZGF_ONBASE_bin">
+      <soap:address location="https://erpqa.acesco.com.co:44300/sap/bc/srt/rfc/sap/zws_onbase/500/zws_onbase/zws_onbase_bind" />
+    </wsdl:port>
+    <wsdl:port name="ZGF_ONBASE_bin_soap12" binding="tns:ZGF_ONBASE_bin_soap12">
+      <wsoap12:address location="https://erpqa.acesco.com.co:44300/sap/bc/srt/rfc/sap/zws_onbase/500/zws_onbase/zws_onbase_bind" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WsLib.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WsLib_co_com_acesco_erpqa_ZWS_ONBASE" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">https://erpqa.acesco.com.co:44300/sap/bc/srt/rfc/sap/zws_onbase/500/zws_onbase/zws_onbase_bind</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
