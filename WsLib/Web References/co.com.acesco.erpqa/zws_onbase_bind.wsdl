@@ -4,7 +4,7 @@
     <sidl:sidl xmlns:sidl="http://www.sap.com/2007/03/sidl" />
   </wsdl:documentation>
   <wsp:UsingPolicy wsdl:required="true" />
-  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_bin">
+  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_BIN">
     <wsp:ExactlyOne>
       <wsp:All>
         <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
@@ -68,7 +68,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_bin_soap12">
+  <wsp:Policy wsu:Id="BN__ZGF_ONBASE_BIN_soap12">
     <wsp:ExactlyOne>
       <wsp:All>
         <sapattahnd:Enabled xmlns:sapattahnd="http://www.sap.com/710/features/attachment/">false</sapattahnd:Enabled>
@@ -204,6 +204,16 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_REMESAS_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="OP__ZBAPI_FACTEXPCLIENTES_1">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -244,6 +254,16 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_RECIBOCAJA_1">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
   <wsp:Policy wsu:Id="OP__ZBAPI_NOMBREBANCO_1">
     <wsp:ExactlyOne>
       <wsp:All>
@@ -265,6 +285,16 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="OP__ZBAPI_ORDENESCOMPRA">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
+        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
+        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
+        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="OP__ZBAPI_RECIBOCAJA">
     <wsp:ExactlyOne>
       <wsp:All>
         <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
@@ -305,26 +335,6 @@
     </wsp:ExactlyOne>
   </wsp:Policy>
   <wsp:Policy wsu:Id="OP__ZBAPI_PROVEEDOR_1">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
-        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
-        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
-        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="OP__ZBAPI_RECIBOCAJA_1">
-    <wsp:ExactlyOne>
-      <wsp:All>
-        <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
-        <sapcomhnd:enableCommit xmlns:sapcomhnd="http://www.sap.com/NW05/soap/features/commit/">false</sapcomhnd:enableCommit>
-        <sapblock:enableBlocking xmlns:sapblock="http://www.sap.com/NW05/soap/features/blocking/">true</sapblock:enableBlocking>
-        <saprmnw05:enableWSRM xmlns:saprmnw05="http://www.sap.com/NW05/soap/features/wsrm/">false</saprmnw05:enableWSRM>
-      </wsp:All>
-    </wsp:ExactlyOne>
-  </wsp:Policy>
-  <wsp:Policy wsu:Id="OP__ZBAPI_REMESAS_1">
     <wsp:ExactlyOne>
       <wsp:All>
         <saptrhnw05:required xmlns:saptrhnw05="http://www.sap.com/NW05/soap/features/transaction/">no</saptrhnw05:required>
@@ -428,7 +438,7 @@
       <xsd:complexType name="ZONBASE_EGRESOS_EGRESOS">
         <xsd:sequence>
           <xsd:element name="VBLNR" type="tns:char10" />
-          <xsd:element name="LAUFD" type="tns:date10" />
+          <xsd:element name="LAUFD" type="tns:char10" />
         </xsd:sequence>
       </xsd:complexType>
       <xsd:complexType name="ZONBASE_EGRESOS_FACTURAS">
@@ -611,6 +621,13 @@
           <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
         </xsd:sequence>
       </xsd:complexType>
+      <xsd:complexType name="ZBAPI_RECIBOCAJA.RfcException">
+        <xsd:sequence>
+          <xsd:element name="Name" type="tns:ZBAPI_RECIBOCAJA.RfcExceptions" />
+          <xsd:element minOccurs="0" name="Text" type="xsd:string" />
+          <xsd:element minOccurs="0" name="Message" type="tns:RfcException.Message" />
+        </xsd:sequence>
+      </xsd:complexType>
       <xsd:complexType name="ZBAPI_RECIBOCAJA_1.RfcException">
         <xsd:sequence>
           <xsd:element name="Name" type="tns:ZBAPI_RECIBOCAJA_1.RfcExceptions" />
@@ -755,6 +772,11 @@
           <xsd:enumeration value="NO_HAY_DATOS" />
         </xsd:restriction>
       </xsd:simpleType>
+      <xsd:simpleType name="ZBAPI_RECIBOCAJA.RfcExceptions">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="NO_HAY_DATOS" />
+        </xsd:restriction>
+      </xsd:simpleType>
       <xsd:simpleType name="ZBAPI_RECIBOCAJA_1.RfcExceptions">
         <xsd:restriction base="xsd:string">
           <xsd:enumeration value="NO_HAY_DATOS" />
@@ -782,6 +804,7 @@
       <xsd:element name="ZBAPI_PEDIDOSPAZKO_1.Exception" type="tns:ZBAPI_PEDIDOSPAZKO_1.RfcException" />
       <xsd:element name="ZBAPI_PROVEEDOR.Exception" type="tns:ZBAPI_PROVEEDOR.RfcException" />
       <xsd:element name="ZBAPI_PROVEEDOR_1.Exception" type="tns:ZBAPI_PROVEEDOR_1.RfcException" />
+      <xsd:element name="ZBAPI_RECIBOCAJA.Exception" type="tns:ZBAPI_RECIBOCAJA.RfcException" />
       <xsd:element name="ZBAPI_RECIBOCAJA_1.Exception" type="tns:ZBAPI_RECIBOCAJA_1.RfcException" />
       <xsd:element name="ZBAPI_REMESAS_1.Exception" type="tns:ZBAPI_REMESAS_1.RfcException" />
       <xsd:element name="ZBAPI_CLIENTE">
@@ -1074,6 +1097,24 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="ZBAPI_RECIBOCAJA">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="V_BELNR" type="tns:char10" />
+            <xsd:element name="V_BUKRS" type="tns:char4" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ZBAPI_RECIBOCAJAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="BELNR" type="tns:char10" />
+            <xsd:element name="KUNNR" type="tns:char10" />
+            <xsd:element name="NAME1" type="tns:char35" />
+            <xsd:element name="STCD1" type="tns:char16" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="ZBAPI_RECIBOCAJA_1">
         <xsd:complexType>
           <xsd:sequence>
@@ -1267,6 +1308,15 @@
   <wsdl:message name="ZBAPI_PROVEEDOR_1.Exception">
     <wsdl:part name="ZBAPI_PROVEEDOR_1.Exception" element="tns:ZBAPI_PROVEEDOR_1.Exception" />
   </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJA">
+    <wsdl:part name="parameters" element="tns:ZBAPI_RECIBOCAJA" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJAResponse">
+    <wsdl:part name="parameter" element="tns:ZBAPI_RECIBOCAJAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZBAPI_RECIBOCAJA.Exception">
+    <wsdl:part name="ZBAPI_RECIBOCAJA.Exception" element="tns:ZBAPI_RECIBOCAJA.Exception" />
+  </wsdl:message>
   <wsdl:message name="ZBAPI_RECIBOCAJA_1">
     <wsdl:part name="parameters" element="tns:ZBAPI_RECIBOCAJA_1" />
   </wsdl:message>
@@ -1425,6 +1475,14 @@
       <wsdl:output message="tns:ZBAPI_PROVEEDOR_1Response" />
       <wsdl:fault name="ZBAPI_PROVEEDOR_1.Exception" message="tns:ZBAPI_PROVEEDOR_1.Exception" />
     </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA">
+      <wsp:Policy>
+        <wsp:PolicyReference URI="#OP__ZBAPI_RECIBOCAJA" />
+      </wsp:Policy>
+      <wsdl:input message="tns:ZBAPI_RECIBOCAJA" />
+      <wsdl:output message="tns:ZBAPI_RECIBOCAJAResponse" />
+      <wsdl:fault name="ZBAPI_RECIBOCAJA.Exception" message="tns:ZBAPI_RECIBOCAJA.Exception" />
+    </wsdl:operation>
     <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
       <wsp:Policy>
         <wsp:PolicyReference URI="#OP__ZBAPI_RECIBOCAJA_1" />
@@ -1442,9 +1500,9 @@
       <wsdl:fault name="ZBAPI_REMESAS_1.Exception" message="tns:ZBAPI_REMESAS_1.Exception" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="ZGF_ONBASE_bin" type="tns:ZWS_ONBASE">
+  <wsdl:binding name="ZGF_ONBASE_BIN" type="tns:ZWS_ONBASE">
     <wsp:Policy>
-      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_bin" />
+      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_BIN" />
     </wsp:Policy>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ZBAPI_CLIENTE">
@@ -1651,6 +1709,18 @@
         <soap:fault use="literal" name="ZBAPI_PROVEEDOR_1.Exception" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA">
+      <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJARequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_RECIBOCAJA.Exception">
+        <soap:fault use="literal" name="ZBAPI_RECIBOCAJA.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
       <soap:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJA_1Request" style="document" />
       <wsdl:input>
@@ -1676,9 +1746,9 @@
       </wsdl:fault>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="ZGF_ONBASE_bin_soap12" type="tns:ZWS_ONBASE">
+  <wsdl:binding name="ZGF_ONBASE_BIN_soap12" type="tns:ZWS_ONBASE">
     <wsp:Policy>
-      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_bin_soap12" />
+      <wsp:PolicyReference URI="#BN__ZGF_ONBASE_BIN_soap12" />
     </wsp:Policy>
     <wsoap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="ZBAPI_CLIENTE">
@@ -1885,6 +1955,18 @@
         <wsoap12:fault use="literal" name="ZBAPI_PROVEEDOR_1.Exception" namespace="" />
       </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="ZBAPI_RECIBOCAJA">
+      <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJARequest" style="document" />
+      <wsdl:input>
+        <wsoap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <wsoap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ZBAPI_RECIBOCAJA.Exception">
+        <wsoap12:fault use="literal" name="ZBAPI_RECIBOCAJA.Exception" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="ZBAPI_RECIBOCAJA_1">
       <wsoap12:operation soapAction="urn:sap-com:document:sap:rfc:functions:ZWS_ONBASE:ZBAPI_RECIBOCAJA_1Request" style="document" />
       <wsdl:input>
@@ -1911,10 +1993,10 @@
     </wsdl:operation>
   </wsdl:binding>
   <wsdl:service name="ZWS_ONBASE">
-    <wsdl:port name="ZGF_ONBASE_bin" binding="tns:ZGF_ONBASE_bin">
+    <wsdl:port name="ZGF_ONBASE_BIN" binding="tns:ZGF_ONBASE_BIN">
       <soap:address location="https://erpqa.acesco.com.co:44300/sap/bc/srt/rfc/sap/zws_onbase/500/zws_onbase/zws_onbase_bind" />
     </wsdl:port>
-    <wsdl:port name="ZGF_ONBASE_bin_soap12" binding="tns:ZGF_ONBASE_bin_soap12">
+    <wsdl:port name="ZGF_ONBASE_BIN_soap12" binding="tns:ZGF_ONBASE_BIN_soap12">
       <wsoap12:address location="https://erpqa.acesco.com.co:44300/sap/bc/srt/rfc/sap/zws_onbase/500/zws_onbase/zws_onbase_bind" />
     </wsdl:port>
   </wsdl:service>

@@ -109,5 +109,16 @@ namespace WsLib
             var response = Conexion().ZBAPI_PROVEEDOR(zBAPI_PROVEEDOR);
             return response;
         }
+
+        public ZBAPI_RECIBOCAJAResponse ZBAPI_RECIBOCAJA(string belnr, string bukrs)
+        {
+            ZBAPI_RECIBOCAJA zBAPI_RECIBOCAJA = new ZBAPI_RECIBOCAJA
+            {
+                V_BELNR = belnr,
+                V_BUKRS = bukrs
+            };
+            var response = Conexion().ZBAPI_RECIBOCAJA(zBAPI_RECIBOCAJA);
+            return response;
+        }
     }
 }

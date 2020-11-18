@@ -17,7 +17,7 @@ namespace Prueba
                 var cliente = api.ZBAPI_CLIENTE("1000", "9006029564");
                 Console.WriteLine("{0} - {1}",cliente.NAME, cliente.TEXT30);
                 Console.WriteLine("\n---Egresos---");
-                ZONBASE_EGRESOS_PROVEEDOR[] it_proveedor = 
+                ZONBASE_EGRESOS_PROVEEDOR[] it_proveedor =
                 {
                     new ZONBASE_EGRESOS_PROVEEDOR { NAME = "", LIFNR = "", STCD1 = "" },
                     new ZONBASE_EGRESOS_PROVEEDOR { NAME = "", LIFNR = "", STCD1 = "" },
@@ -50,6 +50,9 @@ namespace Prueba
                 Console.WriteLine("\n--- Proveedor ---");
                 var proveedores = api.ZBAPI_PROVEEDOR("", "");
                 Console.WriteLine(proveedores.NAME1);
+                Console.WriteLine("\n--- Recibo de Caja ---");
+                var recibocaja = api.ZBAPI_RECIBOCAJA("1600023047", "1000");
+                Console.WriteLine(recibocaja.NAME1);
             }
             catch(Exception ex)
             {

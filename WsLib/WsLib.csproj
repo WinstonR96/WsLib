@@ -122,6 +122,9 @@
     <None Include="Web References\co.com.acesco.erpqa\ZBAPI_PROVEEDOR_1Response.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
+    <None Include="Web References\co.com.acesco.erpqa\ZBAPI_RECIBOCAJAResponse.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\co.com.acesco.erpqa\ZBAPI_RECIBOCAJA_1Response.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
